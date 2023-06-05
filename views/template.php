@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$title?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="index.php?action=listeFilms">Liste des filmes</a></li>
+                <li><a href="index.php?action=listeActors">Liste des acteur</a></li>
+                <li><a href="index.php?action=listeDirectors">Liste des realisateur</a></li>
+                <li><a href="index.php?action=listeGenres">Liste des genre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <?= $content?>
+    </main>
+    <footer>
+        <span>Ceci es un footer</span>
+    </footer>
+    
+</body>
+</html>
