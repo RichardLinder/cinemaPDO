@@ -17,6 +17,7 @@ while ($director = $directors->fetch())
         <th><?=$director["last_name"];?></th> 
         <th><?=$director["birthdate"];?></th> 
         <th><?=$director["sex"];?></th>
+        <th><a href="index.php?action=detailDirector&id=<?=$director["id_director"];?>">Detail du réalisateur </a></th>
     </tr>
 <?php
 }

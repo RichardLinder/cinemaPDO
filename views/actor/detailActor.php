@@ -1,7 +1,6 @@
 <?php
 // démare la temporisation de sortie
 ob_start();
-$photo=false;
 
 while ($detail = $actor->fetch())
     {

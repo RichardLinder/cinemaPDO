@@ -18,7 +18,7 @@ class HumansController
 
     {
         $dao = new DAO;
-        $sql = "SELECT h.first_name, h.last_name, h.birthdate, h.sex FROM `realisateur` r JOIN human h ON h.id_human = r.id_human; ";
+        $sql = "SELECT r.id_director, h.first_name, h.last_name, h.birthdate, h.sex FROM `realisateur` r JOIN human h ON h.id_human = r.id_human; ";
         $directors= $dao->executerRequete($sql);
         require_once"views/director/listeDirector.php";
 
@@ -32,6 +32,18 @@ class HumansController
             JOIN human h
             ON h.id_human = a.id_human 
             WHERE a.id_actor=:id';
+        $param =[ "id" => $id];
+        $actor= $dao->executerRequete($sql,$param);
+        require_once"views/actor/detailActor.php";
+    }
+    public function detailDirector( $id)
+    {
+        $dao = new DAO;
+        $sql = 
+            'SELECT concat( h.first_name, " " ,h.last_name) as title ,r.id_director, h.first_name, h.last_name, h.birthdate, h.sex, h.photo FROM `realisateur` r
+            JOIN human h
+            ON h.id_human = r.id_human 
+            WHERE r.id_director=:id';
         $param =[ "id" => $id];
         $actor= $dao->executerRequete($sql,$param);
         require_once"views/actor/detailActor.php";

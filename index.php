@@ -47,6 +47,9 @@ if (isset($_GET['action']))
         case 'detailActor':
             $humanCtlr->detailActor($id);
             break;
+        case 'detailDirector':
+            $humanCtlr->detailDirector( $id);
+            break;
         default:
         $homeCtlr->homePage();
         break;
