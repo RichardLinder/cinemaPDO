@@ -9,17 +9,17 @@ ob_start();
     ceci es une page des genres
 </h2>
 
+
+<ul>
 <?php 
-
 while ($genre = $genres->fetch())
-{ 
-   
-    echo $genre["wording"]; ?>
-    <hr>
-
+{ ?>
+   <li><?= $genre["wording"];?></li>
 <?php
 }
-
+?>
+</ul>
+<?php
 $title= "liste des genres";
 $content = ob_get_clean();
 require_once "./views/template.php";

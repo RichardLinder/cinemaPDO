@@ -26,6 +26,7 @@ $genrerCtlr = new GenreController;
 
 if (isset($_GET['action'])) 
 {
+    $id= filter_input(INPUT_GET, "id", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
      switch($_GET['action'])
      {
         case "listeFilms": 
@@ -39,6 +40,9 @@ if (isset($_GET['action']))
             break;
         case 'listeGenres':
             $genrerCtlr->findAllGenre();
+            break;
+        case 'detailFilm':
+            $filmCtrl->detailFilm($id);
             break;
         default:
         $homeCtlr->homePage();

@@ -10,13 +10,13 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php?action=listeFilms">Liste des filmes</a></li>
-                <li><a href="index.php?action=listeActors">Liste des acteur</a></li>
-                <li><a href="index.php?action=listeDirectors">Liste des realisateur</a></li>
-                <li><a href="index.php?action=listeGenres">Liste des genre</a></li>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?action=listeFilms">Liste des filmes</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?action=listeActors">Liste des acteur</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?action=listeDirectors">Liste des realisateur</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?action=listeGenres">Liste des genre</a></li>
             </ul>
         </nav>
     </header>
@@ -26,6 +26,6 @@
     <footer>
         <span>Ceci es un footer</span>
     </footer>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

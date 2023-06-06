@@ -3,30 +3,34 @@
 ob_start();
 ?>
 
+<h2>
+    Liste des films
+</h2>
+
+<p>
+    Il a actuelement <?= $films->rowCount()?> dans la base de donné
+</p>
 
 
-<?= $films->rowCount()?>
 
-
-
+<table class="table table-bordered">
 <?php 
 
 while ($film = $films->fetch())
-{ 
-   
-    echo $film["id_film"]; ?>
-    <br>
-
-    <?= $film["title"]; ?>
-    <hr>
-
+{ ?> 
+<tr>
+    <th><?=$film["id_film"];?></th>
+    <th><?= $film["title"];?></th>
+    <th><a href="index.php?action=detailFilm&id=<?=$film["id_film"];?>">Detail film </a></th>
+</tr>
 <?php
 }
 ?>
-<h2>
-    ceci es une page des film
-</h2>
+</table>
+
 <?php
+
+
 $title= "liste des films";
 $content = ob_get_clean();
 require_once "./views/template.php";

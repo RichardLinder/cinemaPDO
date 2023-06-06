@@ -10,7 +10,10 @@ PDO
     {        
         $this->bdd = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');}
 
-    function getBDD(){        return $this->bdd;    }
+    function getBDD()
+    {
+        return $this->bdd;
+    }
     public function executerRequete($sql, $params = NULL){        
         if ($params == NULL)
         {            
