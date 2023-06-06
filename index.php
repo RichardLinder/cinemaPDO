@@ -44,9 +44,13 @@ if (isset($_GET['action']))
         case 'detailFilm':
             $filmCtrl->detailFilm($id);
             break;
+        case 'detailActor':
+            $humanCtlr->detailActor($id);
+            break;
         default:
         $homeCtlr->homePage();
         break;
+
     }
 }
 else 

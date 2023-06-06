@@ -20,6 +20,7 @@ while ($acteur = $acteurs->fetch())
         <th><?= $acteur["last_name"];?></th>
         <th><?= $acteur["birthdate"];?></th>
         <th><?= $acteur["sex"];?></th>
+        <th><a href="index.php?action=detailActor&id=<?=$acteur["id_actor"];?>">Detail de l'acteur </a></th>
     </tr>
 <?php
 }
