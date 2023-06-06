@@ -8,7 +8,7 @@ PDO
     private $bdd;    
     public function __construct()
     {        
-        $this->bdd = new PDO('mysql:host=localhost;dbname=cinema_dl8_bw;charset=utf8', 'root', '');}
+        $this->bdd = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');}
 
     function getBDD(){        return $this->bdd;    }
     public function executerRequete($sql, $params = NULL){        

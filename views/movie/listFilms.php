@@ -5,6 +5,24 @@ ob_start();
 
 
 
+<?= $films->rowCount()?>
+
+
+
+<?php 
+
+while ($film = $films->fetch())
+{ 
+   
+    echo $film["id_film"]; ?>
+    <br>
+
+    <?= $film["title"]; ?>
+    <hr>
+
+<?php
+}
+?>
 <h2>
     ceci es une page des film
 </h2>

@@ -11,7 +11,9 @@ spl_autoload_register(function ($class_name) {
 
 $homeCtlr = new HomeController;
 $filmCtrl = new MovieController;
-$acteurs = new HumansController;
+$humanCtlr = new HumansController;
+$genrerCtlr = new GenreController;
+
 
 
 
@@ -26,16 +28,17 @@ if (isset($_GET['action']))
 {
      switch($_GET['action'])
      {
-        case "listeFilms": $filmCtrl->findAllFilm(); 
+        case "listeFilms": 
+            $filmCtrl->findAllFilm(); 
             break;
         case 'listeActors':
-            # code...
+            $humanCtlr->findAllActor();
             break;
         case 'listeDirectors':
-            # code...
+            $humanCtlr->findAllDirector();
             break;
         case 'listeGenres':
-            # code...
+            $genrerCtlr->findAllGenre();
             break;
         default:
         $homeCtlr->homePage();
