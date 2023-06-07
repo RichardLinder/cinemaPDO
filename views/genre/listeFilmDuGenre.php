@@ -1,32 +1,34 @@
 <?php
 // démare la temporisation de sortie
 ob_start();
+$title;
+$films
 
-
-    # code...
-
-while ($detail = $genre->fetch())
-    {if (!isset($detail)&&$detail==null) 
+    if (!isset($genre)&&$genre!=null) 
+    {
+        while ($detail = $genre->fetch())
+            
         {
-        $title= $detail["wording"];
-        $films[]= $detail["title"];   
-        }else 
-        {
-            $title= $genrerCtlr->getGenderById($id);
-            var_dump($title);
+            $title= $detail["wording"];
+            $films[]= $detail["title"];   
         }
+
+    }else {
+        echo "ereur base de donné";
+        
+    }
 
        
 
-    }  
+    
 ?>
 
-<h2><=$title?></h2>
+<h2><?=$title?></h2>
 
 
 <?php 
 
-if (!isset($films)&&$films==null) {
+if (!isset($films)&&$films!=null) {
     foreach ($films as $key => $film)
    {
     echo $film;

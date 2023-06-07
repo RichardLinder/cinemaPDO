@@ -28,7 +28,7 @@ if (isset($_GET['action']))
 {
     $id= filter_input(INPUT_GET, "id", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
      switch($_GET['action'])
-     {
+    {
         case "listeFilms": 
             $filmCtrl->findAllFilm(); 
             break;
@@ -54,8 +54,8 @@ if (isset($_GET['action']))
             $genrerCtlr->listeFilmDuGenre($id);
             break;
         default:
-        $homeCtlr->homePage();
-        break;
+            $homeCtlr->homePage();
+            break;
 
     }
 }

@@ -3,14 +3,14 @@
 ob_start();
 
 while ($detail = $actor->fetch())
-    {
-        $title=$detail["title"];
-        $firstname=$detail["first_name"];
-        $lastname=$detail["last_name"];
-        $birthdate=$detail["birthdate"];
-        $sex=$detail["sex"];
-            $photo=  $detail["photo"];
-    }  
+{
+    $title=$detail["title"];
+    $firstname=$detail["first_name"];
+    $lastname=$detail["last_name"];
+    $birthdate=$detail["birthdate"];
+    $sex=$detail["sex"];
+    $photo=  $detail["photo"];
+}  
 ?>
 
 <?php
@@ -23,7 +23,7 @@ switch ($sex) {
         break;
     
     default:
-    echo "<h2> $title</h2> ";
+        echo "<h2> $title</h2> ";
         break;
 }
 
