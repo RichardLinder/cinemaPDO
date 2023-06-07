@@ -50,8 +50,8 @@ if (isset($_GET['action']))
         case 'detailDirector':
             $humanCtlr->detailDirector( $id);
             break;
-        case 'listeFilmDuGenre':
-            $genrerCtlr->listeFilmDuGenre($id);
+        case 'listeFilmsDuGenre':
+            $genrerCtlr->listeFilmsDuGenre($id);
             break;
         default:
             $homeCtlr->homePage();

@@ -15,7 +15,7 @@ ob_start();
 while ($genre = $genres->fetch())
 { ?>
 <li> 
-    <a href="index.php?action=listeFilmDuGenre&id=<?=$genre["id_genre"]?>">
+    <a href="index.php?action=listeFilmsDuGenre&id=<?=$genre["id_genre"]?>">
     <?=$genre["wording"];?>
     </a>
 </li>

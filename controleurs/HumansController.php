@@ -20,7 +20,7 @@ class HumansController
         $dao = new DAO;
         $sql = "SELECT r.id_director, h.first_name, h.last_name, h.birthdate, h.sex FROM `realisateur` r JOIN human h ON h.id_human = r.id_human; ";
         $directors= $dao->executerRequete($sql);
-        require_once"views/director/listeDirector.php";
+        require_once"views/director/listeDirectors.php";
 
     }
 

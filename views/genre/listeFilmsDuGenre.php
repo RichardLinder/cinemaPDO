@@ -2,15 +2,14 @@
 // démare la temporisation de sortie
 ob_start();
 $title;
-$films
 
-    if (!isset($genre)&&$genre!=null) 
+
+    if (isset($genre)&&$genre!=null&&$genre->rowCount() > 0) 
     {
-        while ($detail = $genre->fetch())
+        if ($detail = $genre->fetch())
             
         {
             $title= $detail["wording"];
-            $films[]= $detail["title"];   
         }
 
     }else {
@@ -27,13 +26,13 @@ $films
 
 
 <?php 
-
-if (!isset($films)&&$films!=null) {
-    foreach ($films as $key => $film)
+// var_dump( $films->fetch());
+if (isset($films)&&$films!=null && $films->rowCount() > 0) {
+    while ($film = $films->fetch())
    {
-    echo $film;
-    echo "<br>";
-}
+        echo $film["title"];
+        echo "<br>";
+    }
 }else {
     echo "pas de film de ce genre dans la base de donné";
 }

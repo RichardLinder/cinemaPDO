@@ -10,46 +10,32 @@ class GenreController
         $dao = new DAO;
         $sql = "SELECT id_genre, wording FROM `genre`; ";
         $genres= $dao->executerRequete($sql);
-        require_once"views/genre/listeGenre.php";
+        require_once"views/genre/listeGenres.php";
 
     }
-    public function listeFilmDuGenre($id)
+    public function listeFilmsDuGenre($id)
     {
+        // le genre
+        
         $dao = new DAO;
-        $sql = 
-        "SELECT f.title, g.id_genre ,g.wording  
-        FROM `genre` g
-        JOIN clasification c
-        ON c.id_genre = g.id_genre
-        JOIN film f
-        ON f.id_film  = c.id_film
-        WHERE g.id_genre =:id;";
+        $sql = "SELECT id_genre, wording FROM `genre` WHERE id_genre =:id; ";
+     
         $param =[ "id" => $id];
         $genre= $dao->executerRequete($sql, $param);
-        if ( $genre->rowCount()!=0) 
-        {
-            require_once"views/genre/listeFilmDuGenre.php";
 
+        // les films (de ce genre)
 
-        }
-        else 
-        {
- 
-            $sql = "SELECT wording FROM `genre` WHERE g.id_genre =:id; ";
-            $param =[ "id" => $id];
-            $genre= $dao->executerRequete($sql, $param);
-            require_once"views/genre/listeFilmDuGenre.php";
-        }
+        $sql = "SELECT f.title
+            FROM clasification c
+            JOIN film f
+            ON f.id_film  = c.id_film
+            WHERE c.id_genre =:id;";
+        
+        $films=$dao->executerRequete($sql, $param);
 
-
-
+        require_once"views/genre/listeFilmsDuGenre.php";
     }
 
-    public function getGenderById($id)
-    {
-
-       return $resultat;
-    }
     
 }
 
