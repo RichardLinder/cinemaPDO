@@ -31,6 +31,15 @@ class GenreController
 
         require_once"views/genre/listeFilmDuGenre.php";
     }
+
+    public function getGenderById($id)
+    {
+        $dao = new DAO;
+        $sql = "SELECT wording FROM `genre` WHERE g.id_genre =:id;; ";
+        $param =[ "id" => $id];
+        $resultat= $dao->executerRequete($sql);
+       return $resultat;
+    }
     
 }
 
