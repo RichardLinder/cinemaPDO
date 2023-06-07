@@ -17,14 +17,18 @@ class GenreController
     {
         $dao = new DAO;
         $sql = 
-        "SELECT g.wording, f.title, f.id_film  FROM `genre` g
-        JOIN casting c
-        ON c.id_role= g.id_genre
+        "SELECT f.title, g.id_genre ,g.wording  
+        FROM `genre` g
+        JOIN clasification c
+        ON c.id_genre = g.id_genre
         JOIN film f
-        ON f.id_film = c.id_film
-        WHERE g.id_genre=:id;";
-         $param =[ "id" => $id];
+        ON f.id_film  = c.id_film
+        WHERE g.id_genre =:id;";
+        $param =[ "id" => $id];
         $genre= $dao->executerRequete($sql, $param);
+
+
+
         require_once"views/genre/listeFilmDuGenre.php";
     }
     

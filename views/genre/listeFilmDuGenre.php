@@ -1,19 +1,27 @@
 <?php
 // démare la temporisation de sortie
 ob_start();
-
 while ($detail = $genre->fetch())
     {
        
         $title= $detail["wording"];
-        $film= $detail["title"];
+        $films[]= $detail["title"];
     }  
 ?>
-<?php var_dump($film) ?>
 
 <h2><?=$title?></h2>
 
-<?php
+
+<?php 
+
+foreach
+ ($films as $key => $film)
+   {
+    echo $film;
+    echo "<br>";
+}
+
+
 $content = ob_get_clean();
 require_once "./views/template.php";
 ?>
