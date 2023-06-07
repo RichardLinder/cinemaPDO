@@ -2,12 +2,12 @@
 // démare la temporisation de sortie
 ob_start();
 
-while ($detail = $film->fetch())
+if ($detail = $film->fetch())
 {
     $title= $detail["title"];
     $synopsis = $detail["synopsis"];
     $Poster =$detail["poster_link"];
-    $director= $detail["id_director"];
+    $director= $detail["nameDirector"];
     $lengt= $detail["length_in_minute"];
     $SortieFR =$detail["france_release_date"];
 }  
@@ -22,10 +22,21 @@ while ($detail = $film->fetch())
     <?=$synopsis?>
     </p>
     <img src="<?=$Poster?>" alt="Poster de <?=$title?> ">
-  
-
-
 </div>
+
+<?php 
+while ( $casting= $castings->fetch()) 
+{
+    ?>
+    <p>
+        <span><?=$casting["nomActeur"];?></span>
+        <span>dans le role de <?=$casting["role_name"] ?>p </span>
+        <span> <a href="index.php?action=detailActor&id=<?=$casting["id_actor"];?>">Detail de l'acteur </a></span>
+        
+    </p>
+    <?php  
+}
+?>
 <?php
 $content = ob_get_clean();
 require_once "./views/template.php";
