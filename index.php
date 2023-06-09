@@ -9,11 +9,11 @@ spl_autoload_register(function ($class_name) {
 
 // je crée des instaance des controlleurs
 
-$homeCtlr = new HomeController;
-$filmCtrl = new MovieController;
-$humanCtlr = new HumansController;
-$genrerCtlr = new GenreController;
+$homeCtlr = new HomeController; 
 
+$filmCtrl = new MovieController;
+$humanCtlr = new HumansController; 
+$genrerCtlr = new GenreController;
 
 
 
@@ -23,6 +23,7 @@ $genrerCtlr = new GenreController;
 
 // ex Index.php?action=listeFilms
 
+   
 
 if (isset($_GET['action'])) 
 {
@@ -52,6 +53,9 @@ if (isset($_GET['action']))
             break;
         case 'listeFilmsDuGenre':
             $genrerCtlr->listeFilmsDuGenre($id);
+            break;
+        case 'addGenre':
+            $genrerCtlr->addGenre();
             break;
         default:
             $homeCtlr->homePage();

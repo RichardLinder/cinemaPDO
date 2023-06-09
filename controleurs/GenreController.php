@@ -1,6 +1,8 @@
 <?php
 require_once "bdd/DAO.php";
 
+
+
 class GenreController
 
 {
@@ -34,6 +36,19 @@ class GenreController
         $films=$dao->executerRequete($sql, $param);
 
         require_once"views/genre/listeFilmsDuGenre.php";
+    }
+    public function addGenre()
+    {
+         
+        $wording = filter_input (INPUT_POST, "wording", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        // die($wording);
+              
+        $dao = new DAO;
+        $sql= "INSERT INTO `cinema`.`genre` (`wording`) VALUES (:wordingUse);";
+        $param = $param =[ "wordingUse" => $wording];
+        $dao->executerRequete($sql, $param);
+        $this->findAllGenre();
+
     }
 
     
