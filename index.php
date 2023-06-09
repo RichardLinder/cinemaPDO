@@ -61,6 +61,7 @@ if (isset($_GET['action']))
             $genrerCtlr->renameGender($id);
             break;
         case 'genredelet':
+            die ("test");
             $genrerCtlr->genredelet($id);
             break;
         default:

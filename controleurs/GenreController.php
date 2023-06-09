@@ -72,7 +72,7 @@ class GenreController
 
     public function genredelet($id)
     {
-         
+  
         
         $dao = new DAO;
         $sql= "DELETE FROM `cinema`.`genre` WHERE  `id_genre`=:id;";

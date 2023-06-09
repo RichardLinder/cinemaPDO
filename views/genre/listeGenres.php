@@ -24,7 +24,7 @@ while ($genre = $genres->fetch())
             <span><button type="submit">+</button></span>
         </form>
     </span>
-    <form action="index.php?action=deletet=&id=<?=$genre["id_genre"]?>" method="post">
+    <form action="index.php?action=genredelet=&id=<?=$genre["id_genre"]?>" method="post">
             <span><button type="submit">-</button></span>
         </form>
     </span>
