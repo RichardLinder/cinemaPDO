@@ -41,11 +41,44 @@ class GenreController
     {
          
         $wording = filter_input (INPUT_POST, "wording", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        // die($wording);
+        // die($$_POST);
               
         $dao = new DAO;
         $sql= "INSERT INTO `cinema`.`genre` (`wording`) VALUES (:wordingUse);";
         $param = $param =[ "wordingUse" => $wording];
+        $dao->executerRequete($sql, $param);
+        $this->findAllGenre();
+
+    }
+
+    public function renameGender($id)
+    {
+         
+        $wording = filter_input (INPUT_POST, "wording", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+              
+        $dao = new DAO;
+        $sql= 
+            "UPDATE `cinema`.`genre` 
+            SET `wording`=:wording 
+            WHERE  `id_genre`=:id;";
+         $param =[ "wording" => $wording, "id" => $id];
+        
+  
+        $dao->executerRequete($sql, $param);
+        $this->findAllGenre();
+
+    }
+    
+
+    public function genredelet($id)
+    {
+         
+        
+        $dao = new DAO;
+        $sql= "DELETE FROM `cinema`.`genre` WHERE  `id_genre`=:id;";
+         $param =[ "id" => $id];
+         
+  
         $dao->executerRequete($sql, $param);
         $this->findAllGenre();
 

@@ -18,11 +18,16 @@ while ($genre = $genres->fetch())
     <a href="index.php?action=listeFilmsDuGenre&id=<?=$genre["id_genre"]?>">
     <?=$genre["wording"];?>
     </a>
-    <span><form action="index.php?action=update" method="get">
-        <span> <input type="text"  placeholder="<?=$genre["wording"];?>"></span> 
-        <span><button type="submit">+</button></span>
-
-    </form></span>
+    <span>
+        <form action="index.php?action=renameGender&id=<?=$genre["id_genre"]?>" method="post">
+            <span> <input name="wording" type="text"  placeholder="<?=$genre["wording"];?>"></span> 
+            <span><button type="submit">+</button></span>
+        </form>
+    </span>
+    <form action="index.php?action=deletet=&id=<?=$genre["id_genre"]?>" method="post">
+            <span><button type="submit">-</button></span>
+        </form>
+    </span>
 </li>
 
 <?php

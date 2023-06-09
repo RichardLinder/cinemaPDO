@@ -57,6 +57,12 @@ if (isset($_GET['action']))
         case 'addGenre':
             $genrerCtlr->addGenre();
             break;
+        case 'renameGender':
+            $genrerCtlr->renameGender($id);
+            break;
+        case 'genredelet':
+            $genrerCtlr->genredelet($id);
+            break;
         default:
             $homeCtlr->homePage();
             break;
