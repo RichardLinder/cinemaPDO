@@ -1,4 +1,7 @@
 <?php
+
+
+// voir detail director
 require_once "bdd/DAO.php";
 class HumansController
 {
@@ -58,8 +61,8 @@ class HumansController
             ON h.id_human = r.id_human 
             WHERE r.id_director=:id';
         $param =[ "id" => $id];
-        $actor= $dao->executerRequete($sql,$param);
-        require_once"views/actor/detailActor.php";
+        $directors = $dao->executerRequete($sql,$param);
+        require_once"views/director/detailFilm.php";
     }
 }
 
