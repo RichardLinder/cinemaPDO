@@ -34,6 +34,19 @@ class HumansController
             WHERE a.id_actor=:id';
         $param =[ "id" => $id];
         $actor= $dao->executerRequete($sql,$param);
+
+        // requet pour la filmo de l'acteur 
+        $sqlF= 
+        "SELECT f.id_film , f.title a title
+        FROM actor a
+        JOIN casting c
+        ON a.id_actor =c.id_actor
+        JOIN film f
+        ON c.id_film = f.id_film
+        WHERE a.id_actor =:id";
+        $films = $dao->executerRequete($sql,$param);
+
+
         require_once"views/actor/detailActor.php";
     }
     public function detailDirector( $id)

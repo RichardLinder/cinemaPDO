@@ -10,15 +10,27 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php?action=listeFilms">Liste des filmes</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php?action=listeActors">Liste des acteur</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php?action=listeDirectors">Liste des realisateur</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php?action=listeGenres">Liste des genre</a></li>
-            </ul>
-        </nav>
+
+    <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="index.php">Accueil</a></li>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?action=listeFilms">Liste des films</a></li>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?action=listeActors">Liste des acteur</a></li>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?action=listeDirectors">Liste des realisateur</a></li>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?action=listeGenres">Liste des genre</a></li>
+  </li>
+
+</ul>
+
+
     </header>
     <main>
         <?= $content?>

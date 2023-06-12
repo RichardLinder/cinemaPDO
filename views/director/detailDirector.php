@@ -14,19 +14,8 @@ while ($detail = $director->fetch())
 ?>
 
 <?php
-switch ($sex) {
-    case 'male':
-        echo "<h2> Monsieur $title</h2>";
-        break;
-        case 'female':
-        echo "<h2>  Madame $title</h2> ";
-        break;
-    
-    default:
-    echo "<h2> $title</h2> ";
-        break;
-}
 
+    echo "<h2> $title</h2> ";
 ?>
 
 <span> née le<?=$birthdate?> </span>

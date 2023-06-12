@@ -20,8 +20,8 @@ while ($film = $films->fetch())
 { ?> 
 <tr>
     <th><?=$film["id_film"];?></th>
-    <th><?= $film["title"];?></th>
-    <th><a href="index.php?action=detailFilm&id=<?=$film["id_film"];?>">Detail film </a></th>
+    <th><a href="index.php?action=detailFilm&id=<?=$film["id_film"];?>"><?= $film["title"];?>
+ </a></th>
 </tr>
 <?php
 }

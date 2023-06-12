@@ -33,8 +33,22 @@ switch ($sex) {
 
 <figure><img src="<?=$photo?>" alt="<?=$title?>" ></figure>
 
+<p>
+    <?=$detail?> a jouez dans :
+    
+</p>
+<?php while ($film=$films->fetch())
+ {
+?>
 
-<?php
+   <a href="index.php?action=detailFilm&id=<?=$film["id_film"];?>"><?=$film["title"]?></a>
+
+
+
+   <?php
+}
+
+
 $content = ob_get_clean();
 require_once "./views/template.php";
 ?>

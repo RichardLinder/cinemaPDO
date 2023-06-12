@@ -70,7 +70,7 @@ class GenreController
     }
     
 
-    public function genredelet($id)
+    public function genreDelet($id)
     {
   
         
