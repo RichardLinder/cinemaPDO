@@ -67,13 +67,32 @@ class MovieController
     }
     function createFilm()  
     {
+        // die(var_dump($_POST));
         $titre = filter_input (INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $synopsis = filter_input (INPUT_POST, "synopsis", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $posterUrl =filter_input(INPUT_POST,'posterUrl' ,FILTER_UNSAFE_RAW);
+        $poster =filter_input(INPUT_POST,'poster' ,FILTER_SANITIZE_URL);
+        $duree =filter_input(INPUT_POST,'duree' ,FILTER_VALIDATE_INT);
+        $rating =filter_input(INPUT_POST,'rating' ,FILTER_VALIDATE_INT);
+        $dateString =filter_input(INPUT_POST,'date' ,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $dao = new DAO;
+        $sql =
+        "INSERT INTO `cinema`.`film` (`title`, `france_release_date`, `length_in_minute`, `synopsis`, `poster_link`, `rating`, `id_director`)         
+        VALUES (:titre, :dateString, :duree, :synopsis, :poster,:rating ,1);";
+        $param=
+        [":titre"=>$titre,
+         ":dateString"=>$dateString,
+          ":duree"=>$duree,
+          ":synopsis" =>$synopsis,
+          "rating"=>$rating,
+          ":duree"=> $duree,
+          ":poster"=>$poster ];
+
+          $dao->executerRequete($sql,$param);
+          $this->findAllFilm();
+
+    }
 
         
-        die(var_dump($posterUrl));
-    }
 }
 
 
