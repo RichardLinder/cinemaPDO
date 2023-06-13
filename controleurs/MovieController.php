@@ -59,6 +59,21 @@ class MovieController
        
 
     }
+    function createfilmFormulaire() 
+    {
+
+
+        require_once"views/movie/createfilmFormulaire.php";   
+    }
+    function createFilm()  
+    {
+        $titre = filter_input (INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $synopsis = filter_input (INPUT_POST, "synopsis", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $posterUrl =filter_input(INPUT_POST,'posterUrl' ,FILTER_UNSAFE_RAW);
+
+        
+        die(var_dump($posterUrl));
+    }
 }
 
 

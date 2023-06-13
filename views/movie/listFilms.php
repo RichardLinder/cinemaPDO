@@ -28,6 +28,8 @@ while ($film = $films->fetch())
 ?>
 </table>
 
+
+<a href="index.php?action=createfilmFormulaire">ajout film</a>
 <?php
 
 

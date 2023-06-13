@@ -61,8 +61,8 @@ class HumansController
             ON h.id_human = r.id_human 
             WHERE r.id_director=:id';
         $param =[ "id" => $id];
-        $directors = $dao->executerRequete($sql,$param);
-        require_once"views/director/detailFilm.php";
+        $director = $dao->executerRequete($sql,$param);
+        require_once"views\director\detailDirector.php";
     }
 }
 

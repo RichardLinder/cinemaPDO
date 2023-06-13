@@ -63,6 +63,12 @@ if (isset($_GET['action']))
         case 'genreDelet':
             $genrerCtlr->genredelet($id);
             break;
+        case 'createfilmFormulaire':
+            $filmCtrl->createfilmFormulaire();
+            break;
+        case 'createFilm':
+            $filmCtrl->createFilm();
+            break;
         default:
             $homeCtlr->homePage();
             break;
