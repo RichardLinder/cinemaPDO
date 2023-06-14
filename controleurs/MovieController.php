@@ -14,7 +14,7 @@ class MovieController
     {
         $dao = new DAO;
         $sql = 
-        "SELECT f.title, f.france_release_date, f.length_in_minute, f.synopsis, f.id_director, f.poster_link,
+        "SELECT f.id_director, f.title, f.france_release_date, f.length_in_minute, f.synopsis, f.id_director, f.poster_link,
         CONCAT(h.first_name, ' ', h.last_name)as nameDirector
         FROM `film` f 
         JOIN realisateur r

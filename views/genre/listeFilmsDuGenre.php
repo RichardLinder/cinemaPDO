@@ -30,8 +30,13 @@ $title;
 if (isset($films)&&$films!=null && $films->rowCount() > 0) {
     while ($film = $films->fetch())
    {
-        echo $film["title"];
-        echo "<br>";
+    ?>
+    <p>
+        <span><?= $film["title"];?></span>
+        <span><a href="index.php?action=detailFilm&id=<?=$film["id_film"];?>">Detail film </a></span>
+
+    </p>
+    <?php 
     }
 }else {
     echo "pas de film de ce genre dans la base de donné";

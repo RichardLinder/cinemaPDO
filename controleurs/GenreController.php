@@ -25,7 +25,7 @@ class GenreController
 
         // les films (de ce genre)
 
-        $sql = "SELECT f.title
+        $sql = "SELECT f.title, f.id_film
             FROM clasification c
             JOIN film f
             ON f.id_film  = c.id_film

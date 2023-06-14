@@ -10,11 +10,13 @@ if ($detail = $film->fetch())
     $director= $detail["nameDirector"];
     $lengt= $detail["length_in_minute"];
     $SortieFR =$detail["france_release_date"];
+    $idDirector =$detail["id_director"];
 }  
 ?>
 
 <h2><?=$title?></h2>
-<h3> Realisé par <?=$director?></h3>
+<a href="index.php?action=detailDirector&id=<?=$idDirector?>"><h3> Realisé par <?=$director?></h3> </a>
+
 <span>Un film de <?=$lengt?> minutes</span>
 <span>  sortie en sale le <?=$SortieFR?> </span>
 <div>
