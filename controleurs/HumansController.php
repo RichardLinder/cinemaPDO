@@ -64,6 +64,16 @@ class HumansController
         $director = $dao->executerRequete($sql,$param);
         require_once"views\director\detailDirector.php";
     }
+    public function listeHuman()
+    {
+        $dao = new DAO;
+        $sql = "SELECT first_name, last_name, birthdate, sex,id_human FROM `human`;";
+
+        $humans= $dao->executerRequete($sql);
+
+        require_once"views\human\listeHumans.php";
+
+    }
 }
 
 

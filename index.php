@@ -69,6 +69,9 @@ if (isset($_GET['action']))
         case 'createFilm':
             $filmCtrl->createFilm();
             break;
+        case 'listeHuman':
+            $humanCtlr->listeHuman();
+            break;
         default:
             $homeCtlr->homePage();
             break;

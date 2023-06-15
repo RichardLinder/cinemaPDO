@@ -25,6 +25,8 @@ while ($acteur = $acteurs->fetch())
 <?php
 }
 ?>
+<a href="index.php?action=listeHuman"> Verifier liste des persones</a>
+
 <?php
 $title= "liste des acteurs";
 $content = ob_get_clean();
