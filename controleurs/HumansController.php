@@ -40,14 +40,14 @@ class HumansController
 
         // requet pour la filmo de l'acteur 
         $sqlF= 
-        "SELECT f.id_film , f.title a title
+        "SELECT f.id_film , f.title 
         FROM actor a
         JOIN casting c
         ON a.id_actor =c.id_actor
         JOIN film f
         ON c.id_film = f.id_film
         WHERE a.id_actor =:id";
-        $films = $dao->executerRequete($sql,$param);
+        $films = $dao->executerRequete($sqlF,$param);
 
 
         require_once"views/actor/detailActor.php";

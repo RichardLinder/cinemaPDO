@@ -42,6 +42,7 @@ switch ($sex) {
 ?>
 
    <a href="index.php?action=detailFilm&id=<?=$film["id_film"];?>"><?=$film["title"]?></a>
+   <br>
 
 
 
