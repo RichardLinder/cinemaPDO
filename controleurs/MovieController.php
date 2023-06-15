@@ -89,6 +89,9 @@ class MovieController
 
           $dao->executerRequete($sql,$param);
           $this->findAllFilm();
+      
+
+        $castings =  $dao->executerRequete($sqlC,$param);
 
     }
 
