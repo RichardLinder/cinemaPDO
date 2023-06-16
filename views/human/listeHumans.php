@@ -18,12 +18,19 @@ while ($human = $humans->fetch())
 
      ?>
     <tr>
-
+        <th><a href="index.php?action=detailHuman&id=<?=$human["id_human"];?>">test</a></th>
         <th><?= $human["first_name"];?></th>
         <th><?= $human["last_name"];?></th>
         <th><?= $human["birthdate"];?></th>
         <th><?= $human["sex"];?></th>
-        <th><?=$human["id_human"];?></th>
+        <?php if ($human["id_actor"]!=null) 
+        {
+            ?><th> es un acteur</th> <?php
+        } ?>
+            <?php if ($human["id_director"]!=null) 
+        {
+            ?><th> es un realisateur</th> <?php
+        } ?>
     </tr>
 <?php
 }

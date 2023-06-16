@@ -72,6 +72,9 @@ if (isset($_GET['action']))
         case 'listeHuman':
             $humanCtlr->listeHuman();
             break;
+        case 'detailHuman':
+            $humanCtlr->detailHuman($id);
+            break;
         default:
             $homeCtlr->homePage();
             break;
@@ -82,7 +85,4 @@ else
 {
     $homeCtlr->homePage();
 }
-
-// to do next time
-
 ?>

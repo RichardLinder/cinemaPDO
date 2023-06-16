@@ -64,14 +64,42 @@ class HumansController
         $director = $dao->executerRequete($sql,$param);
         require_once"views\director\detailDirector.php";
     }
+
+    // fonction qui cherche dans la basse de donné les info sur les persone 
     public function listeHuman()
     {
         $dao = new DAO;
-        $sql = "SELECT first_name, last_name, birthdate, sex,id_human FROM `human`;";
+        $sql = "SELECT  h.first_name, h.last_name, h.birthdate, h.sex,h.id_human, a.id_actor ,r.id_director
+        FROM `human` h
+        Left JOIN actor a 
+        on h.id_human = a.id_actor
+        LEFT JOIN realisateur r
+        ON h.id_human =r.id_human";
 
         $humans= $dao->executerRequete($sql);
 
         require_once"views\human\listeHumans.php";
+
+    }
+
+
+    // cherche dans la page les détaile de une persone en particulier
+    function detailHuman($id)
+    {
+        $dao = new DAO;
+        $sql=
+        'SELECT  concat( h.first_name, " " ,h.last_name) as title ,h.first_name, h.last_name, h.birthdate, h.sex, h.photo ,h.id_human,  a.id_actor ,r.id_director
+        FROM `human` h
+        Left JOIN actor a 
+        on h.id_human = a.id_actor
+        LEFT JOIN realisateur r
+        ON h.id_human =r.id_human
+        WHERE h.id_human = :id;';
+        $param = [ "id" => $id];  
+        
+        $human= $dao->executerRequete($sql,$param);
+        
+        require_once"views\human\detailHuman.php";
 
     }
 }
