@@ -76,7 +76,7 @@ if (isset($_GET['action']))
             $humanCtlr->detailHuman($id);
             break;
         case 'renameHuman':
-
+            $humanCtlr->renameHuman($id);
             break;
         default:
             $homeCtlr->homePage();
