@@ -69,7 +69,7 @@ class HumansController
     public function listeHuman()
     {
         $dao = new DAO;
-        $sql = "SELECT  h.first_name, h.last_name, h.birthdate, h.sex,h.id_human, a.id_actor ,r.id_director
+        $sql = "SELECT  h.first_name, h.last_name, h.birthdate, h.sex,h.id_human, a.id_actor ,r.id_director 
         FROM `human` h
         Left JOIN actor a 
         on h.id_human = a.id_actor
@@ -100,7 +100,11 @@ class HumansController
         $human= $dao->executerRequete($sql,$param);
         
         require_once"views\human\detailHuman.php";
+    }
 
+    function renameHuman() 
+    {
+        die(var_dump($_POST));
     }
 }
 
