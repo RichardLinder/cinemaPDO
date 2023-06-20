@@ -8,20 +8,22 @@ ob_start();
 
 <table class="table table-bordered">
 
-<?php
-// show the result of the sql request to fetch all director
-while ($director = $directors->fetch())
-{ ?>
-    <tr>
-        <th><?=$director["first_name"];?></th> 
-        <th><?=$director["last_name"];?></th> 
-        <th><?=$director["birthdate"];?></th> 
-        <th><?=$director["sex"];?></th>
-        <th><a href="index.php?action=detailDirector&id=<?=$director["id_director"]?>">Detail du réalisateur </a></th>
-    </tr>
-<?php
-}
-?>
+        <?php
+        // show the result of the sql request to fetch all director
+        while ($director = $directors->fetch())
+        { ?>
+        <tr>
+            <th><?=$director["first_name"];?></th> 
+            <th><?=$director["last_name"];?></th> 
+            <th><?=$director["birthdate"];?></th> 
+            <th><?=$director["sex"];?></th>
+            <th><a href="index.php?action=detailDirector&id=<?=$director["id_director"]?>">Detail du réalisateur </a></th>
+        </tr>
+        <?php
+        }
+        ?>
+<table>
+
 <a href="index.php?action=listeHuman"> Verifier liste des persones</a>
 <?php
 $title= "liste des realisateur";

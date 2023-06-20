@@ -1,6 +1,7 @@
 <?php
 // démare la temporisation de sortie
 ob_start();
+$cSS ="detaileFilm.css";
 
 while ( $genre= $genres->fetch() ) 
 {
@@ -24,14 +25,16 @@ if ($detail = $film->fetch())
 <a href="index.php?action=detailDirector&id=<?=$detail["id_director"]?>"> <h3> Realisé par <?=$director?></h3> </a>
 <span>Un film de <?=$lengt?> minutes</span>
 <span>  sortie en sale le <?=$sortieFR?> </span>
-<div>
+<div class="center">
     <p>
     <?=$synopsis?>
     </p>
-    <img src="<?=$poster?>" alt="Poster de <?=$title?> ">
+    <figure>
+        <img src="<?=$poster?>" alt="Poster de <?=$title?> ">
+    </figure>
 </div>
 <?php 
-
+echo '<div class="blue">';
 while ( $casting= $castings->fetch()) 
 { 
     ?>
@@ -44,7 +47,7 @@ while ( $casting= $castings->fetch())
     <?php  
 }
 ?>
-
+</div>
 
 <?php
 $content = ob_get_clean();

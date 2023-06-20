@@ -25,11 +25,11 @@ while ($human = $humans->fetch())
         <th><?= $human["sex"];?></th>
         <?php if ($human["id_actor"]!=null) 
         {
-            ?><th> es un acteur</th> <?php
+            ?><th> est un acteur</th> <?php
         } ?>
             <?php if ($human["id_director"]!=null) 
         {
-            ?><th> es un realisateur</th> <?php
+            ?><th> est un realisateur</th> <?php
         } ?>
     </tr>
 <?php

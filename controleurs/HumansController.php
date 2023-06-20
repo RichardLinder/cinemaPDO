@@ -102,9 +102,43 @@ class HumansController
         require_once"views\human\detailHuman.php";
     }
 
-    function renameHuman() 
+    function renameHuman($id) 
     {
-        die(var_dump($_POST));
+        $newFirstNam= filter_input (INPUT_POST, "first_name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newLast_name= filter_input(INPUT_POST, "last_name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newBirthdate= filter_input(INPUT_POST, "birthdate", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newSex= filter_input (INPUT_POST, "sex", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newphoto=  filter_input (INPUT_POST, "photo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $id= filter_input(INPUT_POST, "id", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        die (var_dump($id));
+
+
+        $dao = new DAO;
+        $sql= 'UPDATE `human` SET 
+        `first_name` = :newFirstNam, 
+        `last_name` = :newLast_name, 
+        `birthdate` = :newBirthdate, 
+        `sex` = :newSex, 
+        `photo` = :newphoto 
+        WHERE `human`.`id_human` = :id';
+
+        $param= 
+        [
+            "newFirstNam"=> $newFirstNam,
+            "newLast_name"=> $newLast_name,
+            "newBirthdate"=> $newBirthdate,
+            "newSex"=> $newSex,
+            "newphoto"=> $newphoto,
+            "id"=> $id
+        ];
+
+        $dao->executerRequete($sql,$param);
+
+
+        $this->listeHuman();
+
+
+
     }
 }
 

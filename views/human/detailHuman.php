@@ -24,17 +24,16 @@ if ($detail = $human->fetch())
 
 <span>
     <form action="index.php?action=renameHuman" method="post">
-    <form action="first_name" method="post"></form>
-        <span>
-            <label for=""></label> 
-            <input name="first_name" type="text"  placeholder="<?=$detail["first_name"];?>">
-        </span>     
-        <span> <input name="last_name" type="text"  placeholder="<?=$detail["last_name"];?>"</span>     
-        <span> <input name="birthdate" type="date"  placeholder="<?=$detail["birthdate"];?>"</span>     
-        <span> <input name="sex" type="text"  placeholder="<?=$detail["sex"];?>"></span>     
-        <span> <input name="photo" type="url"  placeholder="<?=$detail["photo"];?>"></span> 
         
-        <button  type="submit">cliquer vite !!!!</button>
+        <label for="first_name"> prénoms</label> 
+        <input name="first_name" type="text" id="first_name"  placeholder="<?=$detail["first_name"]?>">
+         <input name="last_name" type="text"  placeholder="<?=$detail["last_name"]?>" />     
+         <input name="birthdate" type="date"  value="<?=$detail["birthdate"]?>"/>  
+         <input name="sex" type="text"  placeholder="<?=$detail["sex"]?>">   
+         <input name="photo" type="url"  placeholder="<?=$detail["photo"]?>"/>
+         <input type ="hidden"  name ="id" value ="<?=$detail["id_human"]?>"     >
+        
+        <button  type="submit">Enregistrer</button>
 
     </form>
 
